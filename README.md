@@ -24,6 +24,23 @@
     
 4. [전국 야간 어린이 병원 목록](https://www.goodoc.co.kr/hospitals/curation?managedTagName=%EB%8B%AC%EB%B9%9B%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%B3%91%EC%9B%90&region=%EC%A0%84%EA%B5%AD)    
 
+## 폴더 구조
+```
+├── crawling/
+├── data/
+├── data_processing/
+├── front/
+|	└── main.py           
+|	└── pages/   
+│		├── 1_chart.py                  # 지역별 병의원 및 약국 현황 & 평균 연령      
+│		├── 2_cancer_hospitals.py       # 전국 암진료 협력 병원 목록   
+│		└── 3_night_hospitals.py        # 전국 야간 어린이 병원 목록 
+├── .env                      
+├── .gitignore       
+└── README.md
+```
+
+
 ## 기술 스택
 
 | 카테고리 | 기술 스택 |
@@ -33,4 +50,8 @@
 | **데이터베이스** | MySQL |
 | **개발 환경** | Git,  VSCode,  Notion |
 
+
+
 ## ERD
+
+

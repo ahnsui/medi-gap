@@ -27,8 +27,9 @@ for page in range(1, 5):
     response = urllib.request.urlopen(request)
     response_body = response.read()
     
+    # json -> dictionary 후 리스트 붙이기
     data = json.loads(response_body)
-    all_data.extend(data.get("data", []))
+    all_data.extend(data.get("data"))
 
 # DB 연결
 connection = mysql.connector.connect(

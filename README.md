@@ -34,7 +34,8 @@
 |	└── pages/   
 │		├── 1_chart.py                  # 지역별 병의원 및 약국 현황 & 평균 연령      
 │		├── 2_cancer_hospitals.py       # 전국 암진료 협력 병원 목록   
-│		└── 3_night_hospitals.py        # 전국 야간 어린이 병원 목록 
+│		└── 3_night_hospitals.py        # 전국 야간 어린이 병원 목록
+├── images/
 ├── .env                      
 ├── .gitignore       
 └── README.md
@@ -53,5 +54,5 @@
 
 
 ## ERD
-
+<img src='images\ERD.png' alt='erd' />
 

@@ -22,6 +22,12 @@
 2. 의료기관 밀도, 암진료 여부, 야간 진료 가능 여부 등 핵심 지표를 도출한다.
 3. 수도권과 지방 간의 의료 격차를 시각화하여 누구나 직관적으로 확인할 수 있도록 한다.
 
+**실행 화면**
+<img src='images\main_page.png' alt='main' />
+<img src='images\chart_page.png' alt='chart' />
+<img src='images\cancer_page.png' alt='cancer' />
+<img src='images\night_page.png' alt='night' />
+
 ## 데이터 셋
 
 1. [전국 병의원 및 약국 현황](https://opendata.hira.or.kr/op/opc/selectOpenData.do?sno=11925)

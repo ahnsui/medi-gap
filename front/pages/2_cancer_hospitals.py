@@ -67,11 +67,11 @@ if selected_regions:
 if selected_cancers:
     filtered_df = filtered_df[filtered_df["암"].isin(selected_cancers)]
 if treatment_only:
-    filtered_df = filtered_df[filtered_df["항암치료"] == 1]
+    filtered_df = filtered_df[filtered_df["항암치료"] == 'O']
 if radiation_only:
-    filtered_df = filtered_df[filtered_df["방사선치료"] == 1]
+    filtered_df = filtered_df[filtered_df["방사선치료"] == 'O']
 if surgery_only:
-    filtered_df = filtered_df[filtered_df["암수술"] == 1]
+    filtered_df = filtered_df[filtered_df["암수술"] == 'O']
 
 st.write(f"총 {len(filtered_df)} 개 병원")
 st.dataframe(filtered_df)

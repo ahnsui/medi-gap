@@ -1,0 +1,6 @@
+INSERT INTO tbl_cancer_type(CANCER_ID, CANCER_TYPE) VALUES(1, '대장암');
+INSERT INTO tbl_cancer_type(CANCER_ID, CANCER_TYPE) VALUES(2, '위암');
+INSERT INTO tbl_cancer_type(CANCER_ID, CANCER_TYPE) VALUES(3, '유방암');
+INSERT INTO tbl_cancer_type(CANCER_ID, CANCER_TYPE) VALUES(4, '폐암');
+INSERT INTO tbl_cancer_type(CANCER_ID, CANCER_TYPE) VALUES(5, '간암');
+INSERT INTO tbl_cancer_type(CANCER_ID, CANCER_TYPE) VALUES(6, '혈액암');

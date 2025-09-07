@@ -35,3 +35,4 @@ connection.close()
 
 # 막대그래프
 st.bar_chart(df.set_index('REGION')['HOSPITAL_COUNT'])
+st.badge('지방의 다수 지역에서 응급 상황에 대비할 수 있는 의료 공백이 존재합니다', icon=":material/check:", color="green")

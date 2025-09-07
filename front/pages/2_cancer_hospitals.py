@@ -75,3 +75,4 @@ if surgery_only:
 
 st.write(f"총 {len(filtered_df)} 개 병원")
 st.dataframe(filtered_df)
+st.badge('수도권에 병원이 집중되어 있고, 지방에서는 암 전문 진료가 가능한 병원 접근성이 크게 떨어집니다', icon=":material/check:", color="green")

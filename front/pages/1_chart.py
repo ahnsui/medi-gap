@@ -59,3 +59,5 @@ st.subheader('지역별 평균 연령')
 
 # 평균 연령 차트
 st.line_chart(filtered_age.set_index("ADDRESS")["AVERAGE_AGE"], color='#FF0000')
+st.badge('고령 인구가 많은 지역일수록 의료 인프라 부족 문제가 더 두드러지는 경향이 있습니다', icon=":material/check:", color="green")
+st.badge('농어촌 지역과 수도권 지역의 의료 접근성 격차가 매우 큰 것을 확인할 수 있습니다.', icon=":material/check:", color="green")

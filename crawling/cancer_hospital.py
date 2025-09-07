@@ -1,31 +1,10 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
-from selenium.webdriver.chrome.service import Service
-import mysql.connector
-from dotenv import load_dotenv
-import os
+from common_module import get_db_connection, get_driver, close_db
 
-load_dotenv()
-DB_HOST = os.getenv('DB_HOST')
-DB_USER = os.getenv('DB_USER')
-DB_PASSWORD = os.getenv('DB_PASSWORD')
-DB_DATABASE = os.getenv('DB_DATABASE')
+connection, cursor = get_db_connection()
 
-connection = mysql.connector.connect(
-    host = DB_HOST,
-    user = DB_USER,
-    password = DB_PASSWORD,
-    database = DB_DATABASE
-)
-
-cursor = connection.cursor()
-
-# Selenium 설정
-path = 'chromedriver.exe'
-service = Service(path)
-driver = webdriver.Chrome(service=service)
+driver = get_driver()
 driver.get('https://www.e-gen.or.kr/cancer/hospitalList.do')
 time.sleep(1)
 
@@ -69,8 +48,4 @@ for row in rows:
             cursor.execute(sql_type, (hospital_id, cancer_id, allow_treatment, allow_radiation, allow_surgery))
 
 driver.quit()
-
-# 커밋 및 종료
-connection.commit()
-cursor.close()
-connection.close()
+close_db(connection, cursor)

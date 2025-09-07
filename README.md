@@ -7,6 +7,15 @@
 
 대한민국은 의료 접근성 면에서 수도권과 지방 간의 격차가 크다는 지적이 꾸준히 제기되고 있다. 특히 고령인구 비중이 높은 농촌 지역에서는 가까운 병원·약국이 부족하거나 야간·주말 진료 공백이 발생해 실질적인 의료 사각지대가 형성된다. 그러나 이러한 문제는 체감 수준에 머무르는 경우가 많고, 객관적 데이터를 기반으로 한 비교·분석은 부족하다. 따라서 공공데이터와 크롤링 데이터를 활용해 격차를 정량적으로 보여주는 작업이 필요하다.
 
+<img src='images\medi_gap_news.png' alt='news' />
+<img src='images\medi_gap_news2.png' alt='news' />
+
+[인구감소지역 의료접근성 문제 심각…의료기관 폐업률도 늘어](https://www.akomnews.com/bbs/board.php?bo_table=news&wr_id=61715)
+
+<img src='images\medi_gap_children.png' alt='news' />
+
+[붕괴 직면 소아청소년 의료, 비가역적 상황 내몰려](https://doctorsnews.co.kr/news/articleView.html?idxno=161032)
+
 **프로젝트 목표**
 
 1. 건강보험심사평가원 및 기타 공공데이터를 활용하여 지역별 의료 인프라 현황을 정량화한다.

@@ -47,14 +47,15 @@ grouped = defaultdict(list)
 for item in all_data:
     region_name = item.get('시도명')
     region_subname = item.get('시군구명')
+    address = f"{region_name} {region_subname or ''}".strip()
     age = float(item.get('전체 평균연령'))
-    grouped[(region_name, region_subname)].append(age)
+    grouped[address].append(age)
 
 # DB에 INSERT
-for (region_name, region_subname), ages in grouped.items():
-    avg_age = sum(ages) / len(ages)
-    sql = "INSERT INTO tbl_region (REGION_NAME, REGION_SUBNAME, AVERAGE_AGE) VALUES (%s, %s, %s)"
-    cursor.execute(sql, (region_name, region_subname, avg_age))
+for address, ages in grouped.items():
+    avg_age = round(sum(ages) / len(ages), 2)
+    sql = "INSERT INTO tbl_region (ADDRESS, AVERAGE_AGE) VALUES (%s, %s)"
+    cursor.execute(sql, (address, avg_age))
 
 # 커밋 및 종료
 connection.commit()

@@ -36,6 +36,7 @@
 │		├── 2_cancer_hospitals.py       # 전국 암진료 협력 병원 목록   
 │		└── 3_night_hospitals.py        # 전국 야간 어린이 병원 목록
 ├── images/
+├── sql/
 ├── .env                      
 ├── .gitignore       
 └── README.md

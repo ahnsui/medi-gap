@@ -52,18 +52,18 @@ for row in rows:
         sql_hospital = 'INSERT INTO tbl_cancer_hospital(HOSPITAL_ID, REGION_NAME, HOSPITAL_NAME) VALUES(%s, %s, %s)'
         cursor.execute(sql_hospital, (hospital_id, region_name, hospital_name))
 
-        allow_treatment = True if td_list[3].text == 'O' else False
-        allow_radiation = True if td_list[4].text == 'O' else False
-        allow_surgery = True if td_list[5].text == 'O' else False
+        allow_treatment = td_list[3].text
+        allow_radiation = td_list[4].text
+        allow_surgery = td_list[5].text
 
         sql_type = 'INSERT INTO tbl_cancer_care(HOSPITAL_ID, CANCER_ID, ALLOW_TREATMENT, ALLOW_RADIATION, ALLOW_SURGERY) VALUES(%s, %s, %s, %s, %s)'
         cursor.execute(sql_type, (hospital_id, cancer_id, allow_treatment, allow_radiation, allow_surgery))
     else:
         cancer_id += 1
         if 0 < len(td_list[0].text) < 4:
-            allow_treatment = True if td_list[1].text == 'O' else False
-            allow_radiation = True if td_list[2].text == 'O' else False
-            allow_surgery = True if td_list[3].text == 'O' else False
+            allow_treatment = td_list[1].text
+            allow_radiation = td_list[2].text
+            allow_surgery = td_list[3].text
 
             sql_type = 'INSERT INTO tbl_cancer_care(HOSPITAL_ID, CANCER_ID, ALLOW_TREATMENT, ALLOW_RADIATION, ALLOW_SURGERY) VALUES(%s, %s, %s, %s, %s)'
             cursor.execute(sql_type, (hospital_id, cancer_id, allow_treatment, allow_radiation, allow_surgery))

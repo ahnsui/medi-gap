@@ -27,6 +27,8 @@
 <img src='images\chart_page.png' alt='chart' />
 <img src='images\cancer_page.png' alt='cancer' />
 <img src='images\night_page.png' alt='night' />
+<img src='images\map_page.png' alt='map' />
+
 
 ## 데이터 셋
 

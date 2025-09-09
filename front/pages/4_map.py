@@ -45,3 +45,4 @@ color_map = {region: [i*30 % 255, i*70 % 255, i*110 % 255] for i, region in enum
 df_grouped["color"] = df_grouped["ADDRESS"].apply(lambda x: color_map[x])
 
 st.map(df_grouped, latitude="lat", longitude="lon", size="size", color="color")
+st.badge('지역별 평균 병원의 개수가 불균형하게 분포하고 있습니다.', icon=":material/check:", color="green")

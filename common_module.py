@@ -4,6 +4,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
+
 # DB 연결
 def get_db_connection():
     load_dotenv()

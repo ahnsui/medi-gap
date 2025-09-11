@@ -2,9 +2,19 @@ import mysql.connector
 from dotenv import load_dotenv
 import os
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 import streamlit as st
 
-st.subheader('지역별 병원 현황')
+# 폰트 설정
+import matplotlib.font_manager as fm
+import matplotlib
+
+font_path = 'C:\\Windows\\Fonts\\gulim.ttc'
+font = fm.FontProperties(fname=font_path).get_name()
+matplotlib.rc('font', family=font)
+
+st.subheader('지역별 병원 현황 및 평균 연령')
 
 # DB 연결
 load_dotenv()
@@ -52,12 +62,35 @@ selected_regions = st.multiselect("2개 이상의 지역을 선택해주세요",
 filtered_df = df[df["ADDRESS"].isin(selected_regions)]
 filtered_age = df_age[df_age["ADDRESS"].isin(selected_regions)]
 
-# 병원 & 의사 수 차트
-st.bar_chart(filtered_df.set_index("ADDRESS")[["HOSPITAL_COUNT", "DOCTOR_COUNT"]], stack=False)
+# 두 데이터프레임 merge해서 같은 순서 유지
+merged_df = pd.merge(
+    filtered_df,
+    filtered_age,
+    on="ADDRESS",
+    suffixes=("", "_AGE")
+)
 
-st.subheader('지역별 평균 연령')
+fig, ax1 = plt.subplots(figsize=(10,6))
 
-# 평균 연령 차트
-st.line_chart(filtered_age.set_index("ADDRESS")["AVERAGE_AGE"], color='#FF0000')
+# 막대그래프 (병원/의사 수)
+ax1.bar(merged_df["ADDRESS"], merged_df["HOSPITAL_COUNT"], color='blue', label="병원 수")
+ax1.bar(merged_df["ADDRESS"], merged_df["DOCTOR_COUNT"], 
+        bottom=merged_df["HOSPITAL_COUNT"], color='skyblue', label="의사 수")
+ax1.set_ylabel("병원 & 의사 수")
+ax1.tick_params(axis='x', rotation=45)
+
+# 두 번째 y축 (평균 연령)
+ax2 = ax1.twinx()
+ax2.plot(merged_df["ADDRESS"], merged_df["AVERAGE_AGE"], 
+         color='red', marker='o', label="평균 연령")
+ax2.set_ylabel("평균 연령")
+
+# 범례 합치기
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax1.legend(lines1 + lines2, labels1 + labels2, loc="upper left")
+
+st.pyplot(fig)
+
 st.badge('고령 인구가 많은 지역일수록 의료 인프라 부족 문제가 더 두드러지는 경향이 있습니다', icon=":material/check:", color="green")
 st.badge('농어촌 지역과 수도권 지역의 의료 접근성 격차가 매우 큰 것을 확인할 수 있습니다.', icon=":material/check:", color="green")

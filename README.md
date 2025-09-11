@@ -47,10 +47,7 @@
 ├── data_processing/
 ├── front/
 |	└── main.py           
-|	└── pages/   
-│		├── 1_chart.py                  # 지역별 병의원 및 약국 현황 & 평균 연령      
-│		├── 2_cancer_hospitals.py       # 전국 암진료 협력 병원 목록   
-│		└── 3_night_hospitals.py        # 전국 야간 어린이 병원 목록
+|	└── pages/
 ├── images/
 ├── sql/
 ├── .env                      
@@ -64,7 +61,7 @@
 | 카테고리 | 기술 스택 |
 | --- | --- |
 | **WEB** | Streamlit |
-| **라이브러리** | Pandas |
+| **라이브러리** | Pandas, numpy, matplotlib |
 | **데이터베이스** | MySQL |
 | **개발 환경** | Git,  VSCode,  Notion |
 
